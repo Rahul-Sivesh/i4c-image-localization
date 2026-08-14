@@ -14,7 +14,7 @@ This repository follows the latest repository requirements provided for the hack
 ## 1. Installation
 
 ```bash
-git clone <YOUR_PUBLIC_GITHUB_REPOSITORY_URL>
+git clone <https://github.com/Rahul-Sivesh/i4c-image-localization>
 cd i4c_localization_repo
 
 python -m venv .venv

@@ -53,3 +53,32 @@ Degraded / Low-Resolution Image
               │
               ▼
     PSNR / SSIM / LPIPS
+
+## 🎯 2. Problem Statement
+
+### AI-Based Restoration of Degraded Images
+
+Semiconductor imaging systems can produce images that are degraded by noise and reduced spatial resolution. Such degradation can obscure important structural information and reduce the usefulness of the images for inspection and analysis.
+
+The objective of this project is to develop an AI-based restoration model that takes a degraded image as input and reconstructs a higher-quality image that is closer to its corresponding ground-truth image.
+
+The restoration task focuses on addressing three major degradation aspects:
+
+### 1. Speckle / Noise Degradation
+
+Noise present in the input image can hide fine structural details and reduce visual clarity.
+
+The model is trained to suppress unwanted noise while preserving meaningful image structures.
+
+### 2. Gaussian-Type Noise
+
+Additional noise can introduce unwanted intensity variations throughout the image.
+
+The restoration network learns to distinguish useful image information from degradation and reconstruct a cleaner representation.
+
+### 3. Super-Resolution
+
+The degraded input images used in the project have a spatial resolution of:
+
+```text
+128 × 128

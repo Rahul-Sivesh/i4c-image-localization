@@ -268,43 +268,14 @@ Restored Images
         ▼
    Output Directory
 ```
-## 📁 12. Repository Structure & Reproducibility
 
-The project repository is organized to separate the training, evaluation, inference and documentation components.
-
-### Repository Structure
-
-```text
-i4c-image-localization/
-│
-├── README.md
-│
-├── Semicon_final.ipynb
-│
-├── train.py
-│
-├── evaluate.py
-│
-├── inference.py
-│
-├── requirements.txt
-│
-├── weights/
-│   └── model_v2_best.pth
-│
-├── restored_test_outputs/
-│   └── test output files
-│
-└── references/
-    └── supporting references
-```
-## ⚠️ 13. Limitations & Future Scope
+## ⚠️ 12. Limitations & Future Scope
 
 Although RestorationNet V1 demonstrated a significant improvement over the Bicubic baseline, several areas remain for further improvement.
 
 ---
 
-### 13.1 Current Limitations
+### 12.1 Current Limitations
 
 #### 🔹 Fine-Detail Preservation
 
@@ -329,7 +300,7 @@ The validated training configuration is:
 ```text
 128 × 128  →  256 × 256
 ```
-## 🏁 14. Conclusion
+## 🏁 13. Conclusion
 
 This project presents an AI-based approach for restoring degraded semiconductor images using deep learning.
 
@@ -356,7 +327,7 @@ V2 Loss Function Experiment
        ↓
 Inference & Deployment Preparation
 ```
-## 👥 15. Team & Contact
+## 👥 14. Team & Contact
 
 ### Team XYZ
 
@@ -371,33 +342,6 @@ We are a multidisciplinary student team working on AI-based image restoration fo
 
 ---
 
-### 🏫 Institution
-
-**Bannari Amman Institute of Technology (BIT)**
-
----
-
-### 📞 Contact
-
-| Contact | Details |
-|---|---|
-| **Team Name** | XYZ |
-| **Institution** | Bannari Amman Institute of Technology |
-| **Phone** | 123456789 |
-| **Email** | abc@bitsathy.c.in |
-
----
-
-### 🤝 Team Contribution
-
-| Area | Responsible Role |
-|---|---|
-| Project Coordination | Team Lead |
-| Model Architecture & Training | Model Development |
-| Dataset & Performance Evaluation | Data & Evaluation |
-| Documentation & Presentation | Documentation & Presentation |
-
----
 
 ## 🌟 Thank You
 

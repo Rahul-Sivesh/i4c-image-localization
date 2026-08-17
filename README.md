@@ -343,10 +343,6 @@ We are a multidisciplinary student team working on AI-based image restoration fo
 ---
 
 
-##  Thank You
-
-Thank you for reviewing our project.
-
 ### **AI-Based Restoration of Degraded Images**
 
 

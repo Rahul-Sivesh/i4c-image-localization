@@ -53,6 +53,8 @@ Degraded / Low-Resolution Image
               │
               ▼
     PSNR / SSIM / LPIPS
+```
+
 
 ## 🎯 2. Problem Statement
 

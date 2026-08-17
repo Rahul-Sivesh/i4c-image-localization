@@ -329,16 +329,16 @@ Inference & Deployment Preparation
 ```
 ##  14. Team & Contact
 
-### Team XYZ
+### Team Byte Forge
 
 We are a multidisciplinary student team working on AI-based image restoration for semiconductor imaging applications.
 
 | S. No. | Member Name | Role | Email |
 |:---:|---|---|---|
-| 1 | **Member 1** | Team Lead | abc@bitsathy.c.in |
-| 2 | **Member 2** | Model Development | abc@bitsathy.c.in |
-| 3 | **Member 3** | Data & Evaluation | abc@bitsathy.c.in |
-| 4 | **Member 4** | Documentation & Presentation | abc@bitsathy.c.in |
+| 1 | **Praaveen Hari G S** | Team Lead | rahulsiveshs.ec24@bitsathy.ac.in |
+| 2 | **Indra Priyadharshani M G** | Model Development | indrapriyadharhanimg@bitsathy.ac.in |
+| 3 | **Rahul Sivesh S** | Data & Evaluation | rahulsiveshs@bitsathy.ac.in |
+| 4 | **Hari Haran** | Documentation & Presentation | abc@bitsathy.c.in |
 
 ---
 

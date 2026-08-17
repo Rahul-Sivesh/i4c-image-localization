@@ -335,9 +335,9 @@ We are a multidisciplinary student team working on AI-based image restoration fo
 
 | S. No. | Member Name | Role | Email |
 |:---:|---|---|---|
-| 1 | **Praaveen Hari G S** | Team Lead | rahulsiveshs.ec24@bitsathy.ac.in |
+| 1 | **Praaveen Hari G S** | Team Lead | praaveenharigs.ec24@bitsathy.ac.in |
 | 2 | **Indra Priyadharshani M G** | Model Development | indrapriyadharhanimg@bitsathy.ac.in |
-| 3 | **Rahul Sivesh S** | Data & Evaluation | rahulsiveshs@bitsathy.ac.in |
+| 3 | **Rahul Sivesh S** | Data & Evaluation | rahulsiveshs.ec24@bitsathy.ac.in |
 | 4 | **Hari Haran** | Documentation & Presentation | abc@bitsathy.c.in |
 
 ---

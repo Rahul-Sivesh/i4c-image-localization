@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 1. Project Overview
+##  1. Project Overview
 
 Semiconductor manufacturing and inspection systems rely on high-quality images to observe microscopic structures and identify fine-scale features.
 
@@ -56,7 +56,7 @@ Degraded / Low-Resolution Image
 ```
 
 
-## 🎯 2. Problem Statement
+##  2. Problem Statement
 
 ### AI-Based Restoration of Degraded Images
 
@@ -85,7 +85,7 @@ The degraded input images used in the project have a spatial resolution of:
 ```text
 128 × 128
 ```
-## 📊 3. Dataset & Data Preparation
+##  3. Dataset & Data Preparation
 
 The project uses paired image data consisting of degraded low-resolution images and their corresponding high-quality ground-truth images.
 
@@ -95,7 +95,7 @@ Each valid pair contains:
 NoisyLR Image  →  Ground Truth Image
   128 × 128          256 × 256
 ```
-## 📈 4. Bicubic ×2 Baseline
+##  4. Bicubic ×2 Baseline
 
 Before developing the deep-learning restoration model, a conventional **Bicubic ×2 interpolation** method was implemented as the baseline.
 
@@ -103,14 +103,14 @@ The purpose of the baseline is to establish a reference performance and determin
 
 ---
 
-### 🔄 Baseline Pipeline
+###  Baseline Pipeline
 
 The degraded input image is first resized from:
 
 ```text
 128 × 128
 ```
-## 🧠 5. RestorationNet V1 — Proposed Model
+##  5. RestorationNet V1 — Proposed Model
 
 To overcome the limitations of conventional Bicubic interpolation, we developed a lightweight convolutional image-restoration network named **RestorationNet V1**.
 
@@ -125,7 +125,7 @@ NoisyLR 128 × 128
         ▼
 Restored Image 256 × 256
 ```
-## ⚙️ 6. Training Methodology
+##  6. Training Methodology
 
 RestorationNet V1 was trained using supervised learning with paired degraded and ground-truth images.
 
@@ -146,7 +146,7 @@ Predicted Restored Image
 Ground Truth
 256 × 256
 ```
-## 📊 7. Model V1 — Test Results
+##  7. Model V1 — Test Results
 
 After training, the best-performing RestorationNet V1 checkpoint was evaluated on the held-out test set.
 
@@ -155,7 +155,7 @@ The test set contains:
 ```text
 320 image pairs
 ```
-## 🧪 8. Model V2 — Loss Function Improvement
+##  8. Model V2 — Loss Function Improvement
 
 Although RestorationNet V1 produced a significant improvement over the Bicubic baseline, visual evaluation indicated that some restored images could become overly smooth.
 
@@ -168,7 +168,7 @@ The objective of V2 was to combine:
 
 ---
 
-### 🔄 V1 vs V2 Loss Strategy
+###  V1 vs V2 Loss Strategy
 
 | Version | Loss Strategy | Main Objective |
 |---|---|---|
@@ -179,14 +179,14 @@ The V2 approach combines the strengths of both losses.
 
 ---
 
-### 🧮 V2 Loss Function
+###  V2 Loss Function
 
 The proposed V2 loss is formulated as:
 
 ```text
 L_total = L1 + λ × L_SSIM
 ```
-## 📏 9. Evaluation Metrics
+##  9. Evaluation Metrics
 
 The restoration quality of the proposed model was evaluated using three complementary image-quality metrics:
 
@@ -207,7 +207,7 @@ The PSNR value is expressed in decibels (dB).
 ```text
 Higher PSNR → Better pixel-level reconstruction
 ```
-## 🖼️ 10. Visual Results & Qualitative Analysis
+##  10. Visual Results & Qualitative Analysis
 
 In addition to quantitative evaluation, visual comparisons were performed to understand how effectively the proposed model restores degraded images.
 
@@ -215,7 +215,7 @@ The restored output from RestorationNet V1 was compared with both the Bicubic ba
 
 ---
 
-### 🔄 Visual Comparison Pipeline
+###  Visual Comparison Pipeline
 
 The images were compared in the following order:
 
@@ -231,7 +231,7 @@ RestorationNet V1
      ▼
 Ground Truth
 ```
-## 🚀 11. Inference & Deployment
+##  11. Inference & Deployment
 
 After training and evaluation, the trained restoration model is prepared for standalone inference.
 
@@ -239,7 +239,7 @@ The inference stage is designed to take degraded test images as input, process t
 
 ---
 
-### 🔄 Inference Pipeline
+###  Inference Pipeline
 
 ```text
 Test NoisyLR Images
@@ -269,7 +269,7 @@ Restored Images
    Output Directory
 ```
 
-## ⚠️ 12. Limitations & Future Scope
+##  12. Limitations & Future Scope
 
 Although RestorationNet V1 demonstrated a significant improvement over the Bicubic baseline, several areas remain for further improvement.
 
@@ -277,7 +277,7 @@ Although RestorationNet V1 demonstrated a significant improvement over the Bicub
 
 ### 12.1 Current Limitations
 
-#### 🔹 Fine-Detail Preservation
+#### Fine-Detail Preservation
 
 Some restored outputs may appear smoother than the corresponding ground-truth images.
 
@@ -285,7 +285,7 @@ This indicates that further improvements are required for recovering very fine i
 
 ---
 
-#### 🔹 Degradation Generalization
+####  Degradation Generalization
 
 The model was trained using the degradation characteristics represented in the available dataset.
 
@@ -293,14 +293,14 @@ Performance on degradation types or distributions that are significantly differe
 
 ---
 
-#### 🔹 Scale Generalization
+####  Scale Generalization
 
 The validated training configuration is:
 
 ```text
 128 × 128  →  256 × 256
 ```
-## 🏁 13. Conclusion
+##  13. Conclusion
 
 This project presents an AI-based approach for restoring degraded semiconductor images using deep learning.
 
@@ -327,7 +327,7 @@ V2 Loss Function Experiment
        ↓
 Inference & Deployment Preparation
 ```
-## 👥 14. Team & Contact
+##  14. Team & Contact
 
 ### Team XYZ
 
@@ -343,13 +343,11 @@ We are a multidisciplinary student team working on AI-based image restoration fo
 ---
 
 
-## 🌟 Thank You
+##  Thank You
 
 Thank you for reviewing our project.
 
 ### **AI-Based Restoration of Degraded Images**
 
-**i4C Hackathon**  
-**Bannari Amman Institute of Technology**
 
 > *Restoring degraded images with AI for clearer and more reliable semiconductor imaging.*

@@ -1,141 +1,55 @@
-# i4C Hackathon – Image Localization
+# AI-Based Restoration of Degraded Images
 
-This repository follows the latest repository requirements provided for the hackathon.
+### i4C Hackathon — Semiconductor Image Restoration
 
-## Required files
+> **An AI-based image restoration system designed to recover high-quality visual information from degraded semiconductor images.**
 
-- `README.md`
-- `scripts/dataset_generator.py`
-- `scripts/localization_inference.py`
-- `requirements.txt`
-- `references/README.md`
-- `outputs/`
+---
 
-## 1. Installation
+## 📌 1. Project Overview
 
-```bash
-git clone <https://github.com/Rahul-Sivesh/i4c-image-localization>
-cd i4c_localization_repo
+Semiconductor manufacturing and inspection systems rely on high-quality images to observe microscopic structures and identify fine-scale features.
 
-python -m venv .venv
-```
+However, images captured during the imaging process can suffer from:
 
-Windows:
+- Noise and speckle degradation
+- Reduced spatial resolution
+- Loss of fine structural details
+- Blur and acquisition-related degradation
+- Poor image quality under challenging imaging conditions
 
-```bash
-.venv\Scripts\activate
-```
+These degradations can make important semiconductor features difficult to observe and analyze.
 
-Linux/macOS:
+Our project addresses this challenge using a **deep-learning-based image restoration pipeline**.
 
-```bash
-source .venv/bin/activate
-```
+The system learns from paired degraded and ground-truth images and attempts to reconstruct a higher-quality image that is closer to the original ground-truth image.
 
-Install dependencies:
+### Overall Objective
 
-```bash
-pip install -r requirements.txt
-```
+The primary objective is to develop an AI model that can:
 
-## 2. Generate a sample image pair
+1. Accept a degraded low-resolution image.
+2. Restore the lost image information.
+3. Increase the spatial resolution by 2×.
+4. Reduce unwanted noise.
+5. Preserve important structural details.
+6. Produce a restored image visually and quantitatively closer to the ground truth.
 
-The generator accepts the required architecture type, number of pairs and output directory.
-
-```bash
-python scripts/dataset_generator.py --architecture FinFET --num_pairs 1 --output_dir sample_data
-```
-
-For DRAM:
-
-```bash
-python scripts/dataset_generator.py --architecture DRAM --num_pairs 1 --output_dir sample_data
-```
-
-The generated directory contains:
+The overall concept is:
 
 ```text
-reference_0000.png
-search_0000.png
-labels.csv
-```
-
-`labels.csv` records the true center coordinates `(x, y)` of the reference pattern in every generated search image.
-
-## 3. Run localization inference
-
-The inference script accepts exactly the two image paths required by the submission:
-
-```bash
-python scripts/localization_inference.py \
-    --reference sample_data/reference_0000.png \
-    --search sample_data/search_0000.png
-```
-
-It prints:
-
-```text
-Predicted center: (x, y)
-```
-
-and writes a JSON result to `prediction.json`.
-
-No source-code editing or hard-coded test paths are required.
-
-## 4. Algorithm
-
-This repository contains a classical image-localization baseline using normalized template matching:
-
-1. Load the reference image.
-2. Load the search image.
-3. Match the reference against the search image.
-4. Find the highest-scoring location.
-5. Convert the best-match bounding box to its center coordinate.
-6. Output one `(x, y)` coordinate.
-
-This baseline does not require DL weights.
-
-## 5. Reproducibility test
-
-Run all of the following on a fresh environment:
-
-```bash
-pip install -r requirements.txt
-
-python scripts/dataset_generator.py \
-    --architecture FinFET \
-    --num_pairs 1 \
-    --output_dir sample_data
-
-python scripts/localization_inference.py \
-    --reference sample_data/reference_0000.png \
-    --search sample_data/search_0000.png
-```
-
-The complete workflow should run without modifying either Python script.
-
-## 6. Repository requirement checklist
-
-| Hackathon requirement | Repository item |
-|---|---|
-| README.md | `README.md` |
-| Dataset Generator Script | `scripts/dataset_generator.py` |
-| Localization Inference Script | `scripts/localization_inference.py` |
-| DL Model Weights | Not applicable to this template-matching implementation |
-| Training Script/Notebook | Not applicable |
-| requirements.txt | `requirements.txt` |
-| Citation Documents / Supporting References | `references/README.md` |
-
-## Important before submission
-
-Replace `<YOUR_PUBLIC_GITHUB_REPOSITORY_URL>` with your actual public GitHub URL.
-
-Also add the exact research papers, datasets, augmentation methods, or model references actually used by your final project to `references/README.md` and your PPT.
-
-If your final solution is a deep-learning localization model rather than template matching, replace `scripts/localization_inference.py` with the final model inference code and include its downloadable weights. The command-line interface should remain:
-
-```bash
-python scripts/localization_inference.py --reference <reference_path> --search <search_path>
-```
-
-The script must output one predicted `(x, y)` coordinate.
+Degraded / Low-Resolution Image
+              │
+              ▼
+      Deep Learning Model
+              │
+              ▼
+    Restored High-Resolution
+           Image
+              │
+              ▼
+       Ground Truth
+       Comparison
+              │
+              ▼
+    PSNR / SSIM / LPIPS

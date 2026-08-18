@@ -276,17 +276,15 @@ Batch Size      : 16
 Batch Time      : 108.82 ms
 Throughput      : 147.0 img/s
 ```
-##  10. Visual Results & Qualitative Analysis
+## 10. Visual Results & Qualitative Analysis
 
 In addition to quantitative evaluation, visual comparisons were performed to understand how effectively the proposed model restores degraded images.
 
-The restored output from RestorationNet V1 was compared with both the Bicubic baseline and the corresponding ground-truth image.
+The restored output from **RestorationNet V2** was compared with the **Bicubic baseline**, **RestorationNet V1**, and the corresponding **ground-truth image**.
 
 ---
 
-###  Visual Comparison Pipeline
-
-The images were compared in the following order:
+### Visual Comparison Pipeline
 
 ```text
 NoisyLR Input
@@ -296,6 +294,9 @@ Bicubic ×2
      │
      ▼
 RestorationNet V1
+     │
+     ▼
+RestorationNet V2
      │
      ▼
 Ground Truth

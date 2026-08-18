@@ -197,13 +197,13 @@ The proposed V2 loss is formulated as:
 ```text
 L_total = L1 + λ × L_SSIM
 ```
-##  9. Evaluation Metrics
+## 9. Evaluation Metrics
 
 The restoration quality of the proposed model was evaluated using three complementary image-quality metrics:
 
-1. **PSNR**
-2. **SSIM**
-3. **LPIPS**
+- **PSNR — Peak Signal-to-Noise Ratio**
+- **SSIM — Structural Similarity Index**
+- **LPIPS — Learned Perceptual Image Patch Similarity**
 
 Using multiple metrics provides a more complete evaluation because image restoration quality cannot be represented by a single numerical measure.
 
@@ -211,12 +211,70 @@ Using multiple metrics provides a more complete evaluation because image restora
 
 ### 9.1 PSNR — Peak Signal-to-Noise Ratio
 
-PSNR measures the similarity between the restored image and the ground-truth image based on pixel-level reconstruction error.
+PSNR measures the similarity between the restored image and the ground-truth image based on pixel-level reconstruction error. It is expressed in decibels (dB).
 
-The PSNR value is expressed in decibels (dB).
+> **Higher PSNR → Better pixel-level reconstruction**
+
+---
+
+### 9.2 SSIM — Structural Similarity Index
+
+SSIM measures how well the restored image preserves structural patterns such as edges and textures relative to the ground truth.
+
+> **Higher SSIM → Better structural preservation**
+
+---
+
+### 9.3 LPIPS — Learned Perceptual Image Patch Similarity
+
+LPIPS uses a deep-feature-based distance to estimate perceptual similarity as judged by a human observer.
+
+> **Lower LPIPS → Better perceptual quality**
+
+---
+
+##  Final Model Comparison — V1 vs V2
+
+| Model | PSNR (dB) ↑ | SSIM ↑ | LPIPS ↓ |
+|---|---:|---:|---:|
+| **RestorationNet V1** | 27.9093 | 0.755831 | 0.308144 |
+| **RestorationNet V2** | **27.8352** | **0.761093** | **0.306096** |
+
+V2's combined **L1 + SSIM loss** trades a marginal amount of PSNR for a measurable gain in structural similarity (SSIM) and perceptual quality (LPIPS), producing restorations that are visually sharper and less over-smoothed.
+
+**V2 was selected as the final model for deployment and submission.**
+
+---
+
+##  Model Efficiency — V2
+
+| Property | Value |
+|---|---:|
+| **Parameters** | 776,705 |
+| **Model Size** | 2.96 MB |
+| **Inference Speed (Single Image)** | 7.75 ms/image |
+| **Single-Image Throughput** | 129.1 img/s |
+| **Inference Speed (Batch of 16)** | 108.82 ms/batch |
+| **Batch Throughput** | 147.0 img/s |
+
+###  Final Model
 
 ```text
-Higher PSNR → Better pixel-level reconstruction
+Final Model: RestorationNet V2
+
+Parameters      : 776,705
+Model Size      : 2.96 MB
+PSNR            : 27.8352 dB
+SSIM            : 0.761093
+LPIPS           : 0.306096
+
+Inference Speed:
+Single Image    : 7.75 ms/image
+Throughput      : 129.1 img/s
+
+Batch Size      : 16
+Batch Time      : 108.82 ms
+Throughput      : 147.0 img/s
 ```
 ##  10. Visual Results & Qualitative Analysis
 

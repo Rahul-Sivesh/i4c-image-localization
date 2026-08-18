@@ -146,14 +146,26 @@ Predicted Restored Image
 Ground Truth
 256 × 256
 ```
-##  7. Model V1 — Test Results
+
+
+```markdown
+## 📊 7. Model V1 — Test Results
 
 After training, the best-performing RestorationNet V1 checkpoint was evaluated on the held-out test set.
 
 The test set contains:
 
-```text
-320 image pairs
+    320 image pairs
+
+### RestorationNet V1 Test Results
+
+| Metric | Score |
+|---|---:|
+| PSNR | 27.9093 dB |
+| SSIM | 0.755831 |
+| LPIPS | 0.308144 |
+
+Compared to the Bicubic ×2 baseline, RestorationNet V1 shows a clear improvement in pixel-level reconstruction (PSNR) and perceptual quality (LPIPS), confirming that the learned restoration approach outperforms conventional interpolation.
 ```
 ##  8. Model V2 — Loss Function Improvement
 
